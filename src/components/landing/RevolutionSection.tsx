@@ -1,5 +1,3 @@
-import React from "react";
-
 export function RevolutionSection() {
   return (
     <section className="py-20 bg-gray-800 ">

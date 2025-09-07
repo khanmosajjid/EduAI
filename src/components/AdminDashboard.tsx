@@ -1,82 +1,134 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { useState } from 'react';
-import { Button } from './ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
-import { Badge } from './ui/badge';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './ui/table';
-import { Input } from './ui/input';
-import { Label } from './ui/label';
-import { Textarea } from './ui/textarea';
-import { 
-  BookOpen, 
-  LogOut, 
-  Users, 
-  TrendingUp, 
-  DollarSign, 
+import { useState } from "react";
+import { Button } from "./ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "./ui/card";
+import { Badge } from "./ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "./ui/table";
+import { Input } from "./ui/input";
+import { Label } from "./ui/label";
+import { Textarea } from "./ui/textarea";
+import {
+  BookOpen,
+  LogOut,
+  Users,
+  TrendingUp,
+  DollarSign,
   Award,
   Search,
   Plus,
   Edit,
   Trash2,
   MoreHorizontal,
-  Calendar,
-  BarChart3
-} from 'lucide-react';
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from './ui/dropdown-menu';
+  BarChart3,
+} from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "./ui/dropdown-menu";
 
 interface AdminDashboardProps {
-  user: { id: string; name: string; email: string; role: 'student' | 'admin' };
+  user: { id: string; name: string; email: string; role: "student" | "admin" };
   onLogout: () => void;
 }
 
 export function AdminDashboard({ user, onLogout }: AdminDashboardProps) {
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
   const [showCreateCourse, setShowCreateCourse] = useState(false);
 
   const stats = [
-    { label: 'Total Students', value: '10,234', change: '+12%', icon: Users },
-    { label: 'Active Courses', value: '127', change: '+5%', icon: BookOpen },
-    { label: 'Revenue', value: '$84,120', change: '+18%', icon: DollarSign },
-    { label: 'Completion Rate', value: '87%', change: '+3%', icon: TrendingUp }
+    { label: "Total Students", value: "10,234", change: "+12%", icon: Users },
+    { label: "Active Courses", value: "127", change: "+5%", icon: BookOpen },
+    { label: "Revenue", value: "$84,120", change: "+18%", icon: DollarSign },
+    { label: "Completion Rate", value: "87%", change: "+3%", icon: TrendingUp },
   ];
 
   const recentStudents = [
-    { id: 1, name: 'Alice Johnson', email: 'alice@example.com', joinDate: '2024-01-15', courses: 3, status: 'Active' },
-    { id: 2, name: 'Bob Smith', email: 'bob@example.com', joinDate: '2024-01-14', courses: 2, status: 'Active' },
-    { id: 3, name: 'Carol Brown', email: 'carol@example.com', joinDate: '2024-01-13', courses: 1, status: 'Inactive' },
-    { id: 4, name: 'David Wilson', email: 'david@example.com', joinDate: '2024-01-12', courses: 4, status: 'Active' },
-    { id: 5, name: 'Emma Davis', email: 'emma@example.com', joinDate: '2024-01-11', courses: 2, status: 'Active' }
+    {
+      id: 1,
+      name: "Alice Johnson",
+      email: "alice@example.com",
+      joinDate: "2024-01-15",
+      courses: 3,
+      status: "Active",
+    },
+    {
+      id: 2,
+      name: "Bob Smith",
+      email: "bob@example.com",
+      joinDate: "2024-01-14",
+      courses: 2,
+      status: "Active",
+    },
+    {
+      id: 3,
+      name: "Carol Brown",
+      email: "carol@example.com",
+      joinDate: "2024-01-13",
+      courses: 1,
+      status: "Inactive",
+    },
+    {
+      id: 4,
+      name: "David Wilson",
+      email: "david@example.com",
+      joinDate: "2024-01-12",
+      courses: 4,
+      status: "Active",
+    },
+    {
+      id: 5,
+      name: "Emma Davis",
+      email: "emma@example.com",
+      joinDate: "2024-01-11",
+      courses: 2,
+      status: "Active",
+    },
   ];
 
   const courses = [
-    { 
-      id: 1, 
-      title: 'React Fundamentals', 
-      instructor: 'Sarah Wilson', 
-      students: 1234, 
-      rating: 4.8, 
-      status: 'Published',
-      revenue: '$12,450'
+    {
+      id: 1,
+      title: "React Fundamentals",
+      instructor: "Sarah Wilson",
+      students: 1234,
+      rating: 4.8,
+      status: "Published",
+      revenue: "$12,450",
     },
-    { 
-      id: 2, 
-      title: 'Data Science with Python', 
-      instructor: 'Dr. Michael Chen', 
-      students: 987, 
-      rating: 4.9, 
-      status: 'Published',
-      revenue: '$15,680'
+    {
+      id: 2,
+      title: "Data Science with Python",
+      instructor: "Dr. Michael Chen",
+      students: 987,
+      rating: 4.9,
+      status: "Published",
+      revenue: "$15,680",
     },
-    { 
-      id: 3, 
-      title: 'UI/UX Design Principles', 
-      instructor: 'Emma Rodriguez', 
-      students: 756, 
-      rating: 4.7, 
-      status: 'Draft',
-      revenue: '$8,920'
-    }
+    {
+      id: 3,
+      title: "UI/UX Design Principles",
+      instructor: "Emma Rodriguez",
+      students: 756,
+      rating: 4.7,
+      status: "Draft",
+      revenue: "$8,920",
+    },
   ];
 
   const CreateCourseForm = () => (
@@ -164,7 +216,9 @@ export function AdminDashboard({ user, onLogout }: AdminDashboardProps) {
               </CardHeader>
               <CardContent>
                 <div className="text-2xl text-primary">{stat.value}</div>
-                <p className="text-xs text-green-600">{stat.change} from last month</p>
+                <p className="text-xs text-green-600">
+                  {stat.change} from last month
+                </p>
               </CardContent>
             </Card>
           ))}
@@ -191,17 +245,27 @@ export function AdminDashboard({ user, onLogout }: AdminDashboardProps) {
                 <CardContent>
                   <div className="space-y-4">
                     {recentStudents.slice(0, 5).map((student) => (
-                      <div key={student.id} className="flex items-center space-x-4">
+                      <div
+                        key={student.id}
+                        className="flex items-center space-x-4"
+                      >
                         <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
                           <Users className="h-5 w-5 text-primary" />
                         </div>
                         <div className="flex-1">
                           <p className="text-sm">{student.name}</p>
                           <p className="text-xs text-muted-foreground">
-                            Enrolled in {student.courses} course{student.courses !== 1 ? 's' : ''}
+                            Enrolled in {student.courses} course
+                            {student.courses !== 1 ? "s" : ""}
                           </p>
                         </div>
-                        <Badge variant={student.status === 'Active' ? 'default' : 'secondary'}>
+                        <Badge
+                          variant={
+                            student.status === "Active"
+                              ? "default"
+                              : "secondary"
+                          }
+                        >
                           {student.status}
                         </Badge>
                       </div>
@@ -218,7 +282,10 @@ export function AdminDashboard({ user, onLogout }: AdminDashboardProps) {
                 <CardContent>
                   <div className="space-y-4">
                     {courses.slice(0, 3).map((course) => (
-                      <div key={course.id} className="flex items-center justify-between">
+                      <div
+                        key={course.id}
+                        className="flex items-center justify-between"
+                      >
                         <div>
                           <p className="text-sm">{course.title}</p>
                           <p className="text-xs text-muted-foreground">
@@ -226,8 +293,12 @@ export function AdminDashboard({ user, onLogout }: AdminDashboardProps) {
                           </p>
                         </div>
                         <div className="text-right">
-                          <p className="text-sm text-primary">{course.revenue}</p>
-                          <p className="text-xs text-muted-foreground">Revenue</p>
+                          <p className="text-sm text-primary">
+                            {course.revenue}
+                          </p>
+                          <p className="text-xs text-muted-foreground">
+                            Revenue
+                          </p>
                         </div>
                       </div>
                     ))}
@@ -244,7 +315,9 @@ export function AdminDashboard({ user, onLogout }: AdminDashboardProps) {
                 <div className="flex justify-between items-center">
                   <div>
                     <CardTitle>Student Management</CardTitle>
-                    <CardDescription>Manage all registered students</CardDescription>
+                    <CardDescription>
+                      Manage all registered students
+                    </CardDescription>
                   </div>
                   <Button>
                     <Plus className="h-4 w-4 mr-2" />
@@ -272,7 +345,13 @@ export function AdminDashboard({ user, onLogout }: AdminDashboardProps) {
                         <TableCell>{student.joinDate}</TableCell>
                         <TableCell>{student.courses}</TableCell>
                         <TableCell>
-                          <Badge variant={student.status === 'Active' ? 'default' : 'secondary'}>
+                          <Badge
+                            variant={
+                              student.status === "Active"
+                                ? "default"
+                                : "secondary"
+                            }
+                          >
                             {student.status}
                           </Badge>
                         </TableCell>
@@ -306,15 +385,19 @@ export function AdminDashboard({ user, onLogout }: AdminDashboardProps) {
           {/* Courses Tab */}
           <TabsContent value="courses" className="space-y-6">
             {showCreateCourse && <CreateCourseForm />}
-            
+
             <Card>
               <CardHeader>
                 <div className="flex justify-between items-center">
                   <div>
                     <CardTitle>Course Management</CardTitle>
-                    <CardDescription>Manage all courses on the platform</CardDescription>
+                    <CardDescription>
+                      Manage all courses on the platform
+                    </CardDescription>
                   </div>
-                  <Button onClick={() => setShowCreateCourse(!showCreateCourse)}>
+                  <Button
+                    onClick={() => setShowCreateCourse(!showCreateCourse)}
+                  >
                     <Plus className="h-4 w-4 mr-2" />
                     Create Course
                   </Button>
@@ -338,11 +421,21 @@ export function AdminDashboard({ user, onLogout }: AdminDashboardProps) {
                       <TableRow key={course.id}>
                         <TableCell>{course.title}</TableCell>
                         <TableCell>{course.instructor}</TableCell>
-                        <TableCell>{course.students.toLocaleString()}</TableCell>
-                        <TableCell>⭐ {course.rating}</TableCell>
-                        <TableCell className="text-primary">{course.revenue}</TableCell>
                         <TableCell>
-                          <Badge variant={course.status === 'Published' ? 'default' : 'secondary'}>
+                          {course.students.toLocaleString()}
+                        </TableCell>
+                        <TableCell>⭐ {course.rating}</TableCell>
+                        <TableCell className="text-primary">
+                          {course.revenue}
+                        </TableCell>
+                        <TableCell>
+                          <Badge
+                            variant={
+                              course.status === "Published"
+                                ? "default"
+                                : "secondary"
+                            }
+                          >
                             {course.status}
                           </Badge>
                         </TableCell>
@@ -391,15 +484,21 @@ export function AdminDashboard({ user, onLogout }: AdminDashboardProps) {
                   <div className="space-y-4">
                     <div className="flex justify-between items-center">
                       <span className="text-sm">January 2025</span>
-                      <span className="text-sm text-primary">+234 students</span>
+                      <span className="text-sm text-primary">
+                        +234 students
+                      </span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-sm">December 2024</span>
-                      <span className="text-sm text-primary">+189 students</span>
+                      <span className="text-sm text-primary">
+                        +189 students
+                      </span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-sm">November 2024</span>
-                      <span className="text-sm text-primary">+156 students</span>
+                      <span className="text-sm text-primary">
+                        +156 students
+                      </span>
                     </div>
                   </div>
                 </CardContent>
@@ -437,7 +536,9 @@ export function AdminDashboard({ user, onLogout }: AdminDashboardProps) {
             <Card>
               <CardHeader>
                 <CardTitle>Platform Settings</CardTitle>
-                <CardDescription>Configure platform-wide settings</CardDescription>
+                <CardDescription>
+                  Configure platform-wide settings
+                </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="space-y-2">
@@ -446,7 +547,10 @@ export function AdminDashboard({ user, onLogout }: AdminDashboardProps) {
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="support-email">Support Email</Label>
-                  <Input id="support-email" defaultValue="support@eduplatform.com" />
+                  <Input
+                    id="support-email"
+                    defaultValue="support@eduplatform.com"
+                  />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="max-students">Max Students per Course</Label>

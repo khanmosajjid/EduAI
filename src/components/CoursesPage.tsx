@@ -1,4 +1,3 @@
-import React from "react";
 import { CoursesHeader } from "./courses/CoursesHeader";
 import { CoursesHero } from "./courses/CoursesHero";
 import { CourseGrid } from "./courses/CourseGrid";

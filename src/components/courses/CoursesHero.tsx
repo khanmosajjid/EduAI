@@ -1,5 +1,3 @@
-import React from 'react';
-
 export function CoursesHero() {
   return (
     <section className="py-16 px-4">
@@ -11,7 +9,9 @@ export function CoursesHero() {
           </span>
         </h1>
         <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-          Choose from our comprehensive AI courses designed by industry experts. From beginner-friendly introductions to advanced deep learning techniques.
+          Choose from our comprehensive AI courses designed by industry experts.
+          From beginner-friendly introductions to advanced deep learning
+          techniques.
         </p>
       </div>
     </section>

@@ -1,79 +1,102 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { useState } from 'react';
-import { Button } from './ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
-import { Progress } from './ui/progress';
-import { Badge } from './ui/badge';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
-import { ImageWithFallback } from './figma/ImageWithFallback';
-import { 
-  BookOpen, 
-  LogOut, 
-  User, 
-  Clock, 
-  Award, 
-  Play, 
-  CheckCircle, 
+import { useState } from "react";
+import { Button } from "./ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { Progress } from "./ui/progress";
+import { Badge } from "./ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
+import {
+  BookOpen,
+  LogOut,
+  User,
+  Clock,
+  Award,
+  Play,
+  CheckCircle,
   Calendar,
   TrendingUp,
   Star,
-  Search
-} from 'lucide-react';
-import { Input } from './ui/input';
+  Search,
+} from "lucide-react";
+import { Input } from "./ui/input";
 
 interface StudentDashboardProps {
-  user: { id: string; name: string; email: string; role: 'student' | 'admin' };
+  user: { id: string; name: string; email: string; role: "student" | "admin" };
   onLogout: () => void;
 }
 
 export function StudentDashboard({ user, onLogout }: StudentDashboardProps) {
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
 
   const enrolledCourses = [
     {
       id: 1,
-      title: 'React Fundamentals',
-      instructor: 'Sarah Wilson',
+      title: "React Fundamentals",
+      instructor: "Sarah Wilson",
       progress: 75,
       totalLessons: 24,
       completedLessons: 18,
-      image: 'https://images.unsplash.com/photo-1569693799105-4eb645d89aea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9ncmFtbWluZyUyMGNvZGUlMjBsYXB0b3B8ZW58MXx8fHwxNzU2NjE5NDM1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      category: 'Programming',
+      image:
+        "https://images.unsplash.com/photo-1569693799105-4eb645d89aea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9ncmFtbWluZyUyMGNvZGUlMjBsYXB0b3B8ZW58MXx8fHwxNzU2NjE5NDM1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      category: "Programming",
       rating: 4.8,
-      nextLesson: 'Hooks and State Management'
+      nextLesson: "Hooks and State Management",
     },
     {
       id: 2,
-      title: 'Data Science with Python',
-      instructor: 'Dr. Michael Chen',
+      title: "Data Science with Python",
+      instructor: "Dr. Michael Chen",
       progress: 45,
       totalLessons: 32,
       completedLessons: 14,
-      image: 'https://images.unsplash.com/photo-1666875753105-c63a6f3bdc86?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXRhJTIwc2NpZW5jZSUyMGFuYWx5dGljc3xlbnwxfHx8fDE3NTY2MzkxNzl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      category: 'Data Science',
+      image:
+        "https://images.unsplash.com/photo-1666875753105-c63a6f3bdc86?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXRhJTIwc2NpZW5jZSUyMGFuYWx5dGljc3xlbnwxfHx8fDE3NTY2MzkxNzl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      category: "Data Science",
       rating: 4.9,
-      nextLesson: 'Machine Learning Basics'
-    }
+      nextLesson: "Machine Learning Basics",
+    },
   ];
 
   const recentActivity = [
-    { id: 1, type: 'completed', content: 'Completed lesson: React Components', time: '2 hours ago' },
-    { id: 2, type: 'started', content: 'Started course: Data Science with Python', time: '1 day ago' },
-    { id: 3, type: 'achievement', content: 'Earned certificate: JavaScript Basics', time: '3 days ago' },
-    { id: 4, type: 'quiz', content: 'Passed quiz: React Fundamentals Quiz 3', time: '5 days ago' }
+    {
+      id: 1,
+      type: "completed",
+      content: "Completed lesson: React Components",
+      time: "2 hours ago",
+    },
+    {
+      id: 2,
+      type: "started",
+      content: "Started course: Data Science with Python",
+      time: "1 day ago",
+    },
+    {
+      id: 3,
+      type: "achievement",
+      content: "Earned certificate: JavaScript Basics",
+      time: "3 days ago",
+    },
+    {
+      id: 4,
+      type: "quiz",
+      content: "Passed quiz: React Fundamentals Quiz 3",
+      time: "5 days ago",
+    },
   ];
 
   const recommendedCourses = [
     {
       id: 3,
-      title: 'UI/UX Design Principles',
-      instructor: 'Emma Rodriguez',
+      title: "UI/UX Design Principles",
+      instructor: "Emma Rodriguez",
       rating: 4.7,
       students: 15420,
-      duration: '8 weeks',
-      image: 'https://images.unsplash.com/photo-1618761714954-0b8cd0026356?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXNpZ24lMjBpbnRlcmZhY2UlMjB1aXxlbnwxfHx8fDE3NTY2NTAzNTV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      price: '$79'
-    }
+      duration: "8 weeks",
+      image:
+        "https://images.unsplash.com/photo-1618761714954-0b8cd0026356?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXNpZ24lMjBpbnRlcmZhY2UlMjB1aXxlbnwxfHx8fDE3NTY2NTAzNTV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      price: "$79",
+    },
   ];
 
   return (
@@ -114,7 +137,9 @@ export function StudentDashboard({ user, onLogout }: StudentDashboardProps) {
             {/* Welcome Section */}
             <div className="bg-gradient-to-r from-primary to-primary/80 text-primary-foreground rounded-xl p-6">
               <h1 className="text-2xl mb-2">Welcome back, {user.name}!</h1>
-              <p className="opacity-90">Continue your learning journey and achieve your goals.</p>
+              <p className="opacity-90">
+                Continue your learning journey and achieve your goals.
+              </p>
               <div className="flex items-center space-x-6 mt-4">
                 <div className="text-center">
                   <div className="text-xl">2</div>
@@ -152,7 +177,10 @@ export function StudentDashboard({ user, onLogout }: StudentDashboardProps) {
                           className="w-full h-full object-cover"
                         />
                         <div className="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
-                          <Button size="sm" className="bg-white/90 text-black hover:bg-white">
+                          <Button
+                            size="sm"
+                            className="bg-white/90 text-black hover:bg-white"
+                          >
                             <Play className="h-4 w-4 mr-2" />
                             Continue
                           </Button>
@@ -167,11 +195,16 @@ export function StudentDashboard({ user, onLogout }: StudentDashboardProps) {
                           </div>
                         </div>
                         <h3 className="mb-2">{course.title}</h3>
-                        <p className="text-sm text-muted-foreground mb-4">by {course.instructor}</p>
+                        <p className="text-sm text-muted-foreground mb-4">
+                          by {course.instructor}
+                        </p>
                         <div className="space-y-2">
                           <div className="flex justify-between text-sm">
                             <span>Progress</span>
-                            <span>{course.completedLessons}/{course.totalLessons} lessons</span>
+                            <span>
+                              {course.completedLessons}/{course.totalLessons}{" "}
+                              lessons
+                            </span>
                           </div>
                           <Progress value={course.progress} className="h-2" />
                           <p className="text-sm text-muted-foreground">
@@ -194,7 +227,9 @@ export function StudentDashboard({ user, onLogout }: StudentDashboardProps) {
                     </CardHeader>
                     <CardContent>
                       <div className="text-2xl text-primary">8.5/10</div>
-                      <p className="text-xs text-muted-foreground">hours this week</p>
+                      <p className="text-xs text-muted-foreground">
+                        hours this week
+                      </p>
                       <Progress value={85} className="h-2 mt-2" />
                     </CardContent>
                   </Card>
@@ -205,7 +240,9 @@ export function StudentDashboard({ user, onLogout }: StudentDashboardProps) {
                     </CardHeader>
                     <CardContent>
                       <div className="text-2xl text-primary">15</div>
-                      <p className="text-xs text-muted-foreground">days in a row</p>
+                      <p className="text-xs text-muted-foreground">
+                        days in a row
+                      </p>
                     </CardContent>
                   </Card>
                   <Card>
@@ -215,7 +252,9 @@ export function StudentDashboard({ user, onLogout }: StudentDashboardProps) {
                     </CardHeader>
                     <CardContent>
                       <div className="text-2xl text-primary">32</div>
-                      <p className="text-xs text-muted-foreground">lessons this month</p>
+                      <p className="text-xs text-muted-foreground">
+                        lessons this month
+                      </p>
                     </CardContent>
                   </Card>
                 </div>
@@ -225,9 +264,21 @@ export function StudentDashboard({ user, onLogout }: StudentDashboardProps) {
               <TabsContent value="certificates" className="space-y-6">
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {[
-                    { title: 'JavaScript Fundamentals', issueDate: 'Dec 15, 2024', id: 'JS-001' },
-                    { title: 'HTML & CSS Mastery', issueDate: 'Nov 28, 2024', id: 'HTML-001' },
-                    { title: 'Git Version Control', issueDate: 'Nov 10, 2024', id: 'GIT-001' }
+                    {
+                      title: "JavaScript Fundamentals",
+                      issueDate: "Dec 15, 2024",
+                      id: "JS-001",
+                    },
+                    {
+                      title: "HTML & CSS Mastery",
+                      issueDate: "Nov 28, 2024",
+                      id: "HTML-001",
+                    },
+                    {
+                      title: "Git Version Control",
+                      issueDate: "Nov 10, 2024",
+                      id: "GIT-001",
+                    },
                   ].map((cert, index) => (
                     <Card key={index} className="text-center">
                       <CardContent className="pt-6">
@@ -302,7 +353,9 @@ export function StudentDashboard({ user, onLogout }: StudentDashboardProps) {
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
                     <div className="flex-1 min-w-0">
                       <p className="text-sm">{activity.content}</p>
-                      <p className="text-xs text-muted-foreground">{activity.time}</p>
+                      <p className="text-xs text-muted-foreground">
+                        {activity.time}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -319,14 +372,18 @@ export function StudentDashboard({ user, onLogout }: StudentDashboardProps) {
                   <Clock className="h-4 w-4 text-muted-foreground" />
                   <div>
                     <p className="text-sm">React Components</p>
-                    <p className="text-xs text-muted-foreground">2:00 PM - 3:00 PM</p>
+                    <p className="text-xs text-muted-foreground">
+                      2:00 PM - 3:00 PM
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Clock className="h-4 w-4 text-muted-foreground" />
                   <div>
                     <p className="text-sm">Python Data Analysis</p>
-                    <p className="text-xs text-muted-foreground">4:00 PM - 5:30 PM</p>
+                    <p className="text-xs text-muted-foreground">
+                      4:00 PM - 5:30 PM
+                    </p>
                   </div>
                 </div>
               </CardContent>

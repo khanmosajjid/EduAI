@@ -1,6 +1,5 @@
-import React from 'react';
-import { Card, CardContent } from '../ui/card';
-import { CheckCircle, Users, Target, Globe } from 'lucide-react';
+import { Card, CardContent } from "../ui/card";
+import { CheckCircle, Users, Target, Globe } from "lucide-react";
 
 export function TeamBenefitsSection() {
   return (
@@ -11,10 +10,11 @@ export function TeamBenefitsSection() {
             Upskill your Team, Upscale your Business
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Elevate your team's skills to get efficiency and revenue innovation for your organization through comprehensive AI training.
+            Elevate your team's skills to get efficiency and revenue innovation
+            for your organization through comprehensive AI training.
           </p>
         </div>
-        
+
         <div className="grid md:grid-cols-2 gap-8">
           <Card className="bg-slate-800/50 border-slate-700 backdrop-blur">
             <CardContent className="p-6">
@@ -23,9 +23,13 @@ export function TeamBenefitsSection() {
                   <CheckCircle className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl text-white mb-2">Self-paced skills content</h3>
+                  <h3 className="text-xl text-white mb-2">
+                    Self-paced skills content
+                  </h3>
                   <p className="text-gray-300">
-                    Allow your team to learn at their own pace with our comprehensive self-directed learning materials and flexible scheduling.
+                    Allow your team to learn at their own pace with our
+                    comprehensive self-directed learning materials and flexible
+                    scheduling.
                   </p>
                 </div>
               </div>
@@ -39,9 +43,13 @@ export function TeamBenefitsSection() {
                   <Users className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl text-white mb-2">Office hours with Mentors for ongoing support</h3>
+                  <h3 className="text-xl text-white mb-2">
+                    Office hours with Mentors for ongoing support
+                  </h3>
                   <p className="text-gray-300">
-                    Regular one-on-one sessions with AI experts to provide guidance, answer questions, and ensure continuous learning progress.
+                    Regular one-on-one sessions with AI experts to provide
+                    guidance, answer questions, and ensure continuous learning
+                    progress.
                   </p>
                 </div>
               </div>
@@ -55,9 +63,13 @@ export function TeamBenefitsSection() {
                   <Target className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl text-white mb-2">Project-based approach to assess progress</h3>
+                  <h3 className="text-xl text-white mb-2">
+                    Project-based approach to assess progress
+                  </h3>
                   <p className="text-gray-300">
-                    Hands-on projects that simulate real-world scenarios, allowing teams to apply their knowledge and track measurable progress.
+                    Hands-on projects that simulate real-world scenarios,
+                    allowing teams to apply their knowledge and track measurable
+                    progress.
                   </p>
                 </div>
               </div>
@@ -71,9 +83,13 @@ export function TeamBenefitsSection() {
                   <Globe className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl text-white mb-2">Facilitated community access</h3>
+                  <h3 className="text-xl text-white mb-2">
+                    Facilitated community access
+                  </h3>
                   <p className="text-gray-300">
-                    Access to our exclusive community of AI professionals, fostering collaboration, networking, and continued learning opportunities.
+                    Access to our exclusive community of AI professionals,
+                    fostering collaboration, networking, and continued learning
+                    opportunities.
                   </p>
                 </div>
               </div>

@@ -1,13 +1,15 @@
-import React from 'react';
-import { Button } from '../ui/button';
-import { ArrowLeft, Sparkles } from 'lucide-react';
+import { Button } from "../ui/button";
+import { ArrowLeft, Sparkles } from "lucide-react";
 
 interface CoursesHeaderProps {
   onBackToLanding: () => void;
   onGetStarted: () => void;
 }
 
-export function CoursesHeader({ onBackToLanding, onGetStarted }: CoursesHeaderProps) {
+export function CoursesHeader({
+  onBackToLanding,
+  onGetStarted,
+}: CoursesHeaderProps) {
   return (
     <header className="border-b border-white/10 bg-black/20 backdrop-blur supports-[backdrop-filter]:bg-black/20">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
@@ -27,8 +29,8 @@ export function CoursesHeader({ onBackToLanding, onGetStarted }: CoursesHeaderPr
             <span className="text-xl text-white">Avatar AI</span>
           </div>
         </div>
-        <Button 
-          onClick={onGetStarted} 
+        <Button
+          onClick={onGetStarted}
           className="bg-gradient-to-r from-orange-400 to-yellow-500 hover:from-orange-500 hover:to-yellow-600 text-black border-0"
         >
           Get Started

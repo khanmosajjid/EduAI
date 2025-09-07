@@ -1,6 +1,5 @@
-import React from 'react';
-import { Button } from '../ui/button';
-import { Sparkles } from 'lucide-react';
+import { Button } from "../ui/button";
+import { Sparkles } from "lucide-react";
 
 interface HeaderProps {
   onGetStarted: () => void;
@@ -17,13 +16,33 @@ export function Header({ onGetStarted }: HeaderProps) {
           <span className="text-xl text-white">Avatar AI</span>
         </div>
         <nav className="hidden md:flex items-center space-x-6">
-          <a href="#features" className="text-gray-300 hover:text-white transition-colors">Our Solutions</a>
-          <a href="#courses" className="text-gray-300 hover:text-white transition-colors">Our Courses</a>
-          <a href="#testimonials" className="text-gray-300 hover:text-white transition-colors">Our Team</a>
-          <a href="#team" className="text-gray-300 hover:text-white transition-colors">Mobile App</a>
+          <a
+            href="#features"
+            className="text-gray-300 hover:text-white transition-colors"
+          >
+            Our Solutions
+          </a>
+          <a
+            href="#courses"
+            className="text-gray-300 hover:text-white transition-colors"
+          >
+            Our Courses
+          </a>
+          <a
+            href="#testimonials"
+            className="text-gray-300 hover:text-white transition-colors"
+          >
+            Our Team
+          </a>
+          <a
+            href="#team"
+            className="text-gray-300 hover:text-white transition-colors"
+          >
+            Mobile App
+          </a>
         </nav>
-        <Button 
-          onClick={onGetStarted} 
+        <Button
+          onClick={onGetStarted}
           className="bg-gradient-to-r from-orange-400 to-yellow-500 hover:from-orange-500 hover:to-yellow-600 text-black border-0"
         >
           Get Started

@@ -1,7 +1,12 @@
-import React from 'react';
-import { Button } from '../../ui/button';
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '../../ui/dialog';
-import { CheckCircle } from 'lucide-react';
+import { Button } from "../../ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "../../ui/dialog";
+import { CheckCircle } from "lucide-react";
 
 interface Course {
   id: number;
@@ -20,7 +25,12 @@ interface FeeDetailsDialogProps {
   onGetStarted: () => void;
 }
 
-export function FeeDetailsDialog({ course, isOpen, onClose, onGetStarted }: FeeDetailsDialogProps) {
+export function FeeDetailsDialog({
+  course,
+  isOpen,
+  onClose,
+  onGetStarted,
+}: FeeDetailsDialogProps) {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="bg-slate-800 border-slate-700">
@@ -30,7 +40,7 @@ export function FeeDetailsDialog({ course, isOpen, onClose, onGetStarted }: FeeD
             Complete pricing details for {course?.title}
           </DialogDescription>
         </DialogHeader>
-        
+
         <div className="space-y-6">
           <div className="bg-slate-700/50 p-4 rounded-lg">
             <div className="flex justify-between items-center mb-4">
@@ -44,13 +54,14 @@ export function FeeDetailsDialog({ course, isOpen, onClose, onGetStarted }: FeeD
                 )}
               </div>
             </div>
-            
+
             {course?.originalPrice && (
               <div className="bg-green-600/20 border border-green-600/30 p-3 rounded-lg mb-4">
                 <div className="flex items-center space-x-2 text-green-400">
                   <CheckCircle className="h-4 w-4" />
                   <span className="text-sm">
-                    Limited Time Offer: Save ${course.originalPrice - course.price}!
+                    Limited Time Offer: Save $
+                    {course.originalPrice - course.price}!
                   </span>
                 </div>
               </div>
@@ -89,7 +100,7 @@ export function FeeDetailsDialog({ course, isOpen, onClose, onGetStarted }: FeeD
           </div>
 
           <div className="pt-4 border-t border-slate-600">
-            <Button 
+            <Button
               onClick={() => {
                 onGetStarted();
                 onClose();

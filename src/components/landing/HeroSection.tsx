@@ -1,6 +1,6 @@
-import React from 'react';
-import { Button } from '../ui/button';
-import { ArrowRight, Brain, Sparkles, Target } from 'lucide-react';
+import React from "react";
+import { Button } from "../ui/button";
+import { ArrowRight, Brain, Sparkles, Target } from "lucide-react";
 
 interface HeroSectionProps {
   onGetStarted: () => void;
@@ -22,14 +22,15 @@ export function HeroSection({ onGetStarted }: HeroSectionProps) {
                 </span>
               </h1>
               <p className="text-xl text-gray-300 max-w-lg">
-                Learn, create, and innovate with our cutting-edge programs designed to unlock your potential in the AI revolution.
+                Learn, create, and innovate with our cutting-edge programs
+                designed to unlock your potential in the AI revolution.
               </p>
             </div>
-            
+
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                onClick={onGetStarted} 
-                size="lg" 
+              <Button
+                onClick={onGetStarted}
+                size="lg"
                 className="bg-gradient-to-r from-orange-400 to-yellow-500 hover:from-orange-500 hover:to-yellow-600 text-black border-0 px-8"
               >
                 Explore Programs
@@ -64,9 +65,12 @@ export function HeroSection({ onGetStarted }: HeroSectionProps) {
                 <div className="absolute inset-16 bg-gradient-to-r from-purple-200 to-blue-200 rounded-full opacity-50 flex items-center justify-center">
                   <Brain className="h-16 w-16 text-white animate-pulse" />
                 </div>
-                
+
                 {/* Orbiting Elements */}
-                <div className="absolute inset-0 animate-spin" style={{animationDuration: '20s'}}>
+                <div
+                  className="absolute inset-0 animate-spin"
+                  style={{ animationDuration: "20s" }}
+                >
                   <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-2">
                     <div className="w-4 h-4 bg-yellow-400 rounded-full animate-bounce"></div>
                   </div>
@@ -82,7 +86,13 @@ export function HeroSection({ onGetStarted }: HeroSectionProps) {
                 </div>
 
                 {/* Secondary Orbit */}
-                <div className="absolute inset-8 animate-spin" style={{animationDuration: '15s', animationDirection: 'reverse'}}>
+                <div
+                  className="absolute inset-8 animate-spin"
+                  style={{
+                    animationDuration: "15s",
+                    animationDirection: "reverse",
+                  }}
+                >
                   <div className="absolute top-4 right-4">
                     <div className="w-2 h-2 bg-orange-400 rounded-full animate-ping"></div>
                   </div>

@@ -54,7 +54,7 @@ export default function App() {
       <div className="min-h-screen bg-slate-900">
         {currentPage === "landing" && (
           <LandingPage
-            onGetStarted={navigateToAuth}
+            onGetStarted={navigateToCourses}
             onViewCourses={navigateToCourses}
           />
         )}
